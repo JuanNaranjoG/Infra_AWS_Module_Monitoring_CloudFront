@@ -88,18 +88,18 @@ resource "aws_cloudwatch_metric_alarm" "cloudfront_function_execution_errors" {
 
 ---
 
-## 🧪 Ejemplo de uso
+## 🧪 Modo de uso
 
 ```hcl
 module "cloudfront_monitoring" {
-  source                   = "git::git@github.com:bocc-principal/Infra_AWS_Module_Monitoring_CloudFront.git//CloudFront?ref=feature"
+  source                   = "git::git@github.com:bocc-principal/Infra_AWS_Module_Monitoring_CloudFront.git//CloudFront?ref=V1.0.1"
   cloudfront_distributions = var.cloudfront_distributions
   project                  = var.project
   name_service             = var.bdo_name_service
   bdo_environment          = var.bdo_environment
   purpose                  = var.purpose
 
-  sns_topic_arn            = "arn:aws:sns:us-east-1:153126438600:cloudfront-monitoring"
+  sns_topic_arn            = "sns_topic-arn"
 }
 ```
 

@@ -11,11 +11,15 @@ variable "project" {
   type = string
 }
 
-variable "name_service" {
+variable "bdo_name_service" {
   type = string
 }
 
-variable "environment" {
+variable "purpose" {
+  type = string
+}
+
+variable "bdo_environment" {
   type = string
 }
 
@@ -31,11 +35,24 @@ variable "ok_actions" {
   description = "Lista de ARNs a notificar cuando una alarma vuelva a estado OK"
 }
 
+variable "resource_adicional_tags" {
+  type        = map(string)
+  default     = {}
+  description = "Etiquetas adicionales no obligatorias"
+}
+
 variable "resource_tags" {
   type        = map(string)
   default     = {}
-  description = "Etiquetas adicionales para las alarmas"
+  description = "Etiquetas Bdo - Etiquetas Aval"
 }
+
+variable "sns_topic-arn" {
+  type        = string
+  default     = {}
+  description = "SNS topic ARN para notificaciones"
+}
+
 
 ###############################
 # Variables por métrica
@@ -88,3 +105,4 @@ variable "cf_function_errors_evaluation_periods" {
   type    = number
   default = 1
 }
+
