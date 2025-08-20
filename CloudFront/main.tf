@@ -33,7 +33,7 @@ resource "aws_cloudwatch_metric_alarm" "cloudfront_5xx" {
 # Alarmas de latencia de origen
 resource "aws_cloudwatch_metric_alarm" "cloudfront_origin_latency" {
 
-  alarm_name          = "${var.project}-${var.bdo_name_service}-5xxErrorRate-${var.bdo_environment}"
+  alarm_name          = "${var.project}-${var.bdo_name_service}-OriginLatency-${var.bdo_environment}"
   comparison_operator = "GreaterThanThreshold"
   evaluation_periods  = var.cf_origin_latency_evaluation_periods
   metric_name         = "OriginLatency"
@@ -61,7 +61,7 @@ resource "aws_cloudwatch_metric_alarm" "cloudfront_origin_latency" {
 # Alarmas de errores de ejecución de funciones
 resource "aws_cloudwatch_metric_alarm" "cloudfront_function_errors" {
 
-  alarm_name          = "${var.project}-${var.bdo_name_service}-5xxErrorRate-${var.bdo_environment}"
+  alarm_name          = "${var.project}-${var.bdo_name_service}-FunctionExecutionErrors-${var.bdo_environment}"
   comparison_operator = "GreaterThanThreshold"
   evaluation_periods  = var.cf_function_errors_evaluation_periods
   metric_name         = "FunctionExecutionErrors"
