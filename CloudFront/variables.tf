@@ -79,12 +79,12 @@ variable "cloudfront_5xx_error_threshold" {
 
 variable "cloudfront_4xx_error_evaluation_periods" {
   type    = number
-  default = 3 # Periodos por cada evaluacion antes de generar la alarma 3 * 100 = 300
+  default = 5 # Periodos por cada evaluacion antes de generar la alarma 3 * 100 = 300
 }
 
 variable "cloudfront_4xx_error_events_period" {
   type    = number
-  default = 100 # Valor en segundos = 1,7 minutos
+  default = 60 # Valor en segundos = 1 minuto
 }
 
 variable "cloudfront_4xx_error_threshold" {
@@ -96,12 +96,12 @@ variable "cloudfront_4xx_error_threshold" {
 
 variable "cloudfront_origin_lantency_evaluation_periods" {
   type    = number
-  default = 3 # Periodos por cada evaluacion antes de generar la alarma 3 * 100 = 30
+  default = 5 # Periodos por cada evaluacion antes de generar la alarma 3 * 100 = 30
 }
 
 variable "cloudfront_origin_lantency_events_period" {
   type    = number
-  default = 100 # Valor en segundos = 1,7 minutos
+  default = 60 # Valor en segundos = 1 minuto
 }
 
 variable "cloudfront_origin_lantency_threshold" {
@@ -113,12 +113,12 @@ variable "cloudfront_origin_lantency_threshold" {
 
 variable "cloudfront_request_evaluation_periods" {
   type    = number
-  default = 3 # Periodos por cada evaluacion antes de generar la alarma 3 * 100 = 300
+  default = 5 # Periodos por cada evaluacion antes de generar la alarma 3 * 100 = 300
 }
 
 variable "cloudfront_request_events_period" {
   type    = number
-  default = 100 # Valor en segundos = 1,7 minutos
+  default = 60 # Valor en segundos = 1 minuto
 }
 
 variable "cloudfront_request_threshold" {
