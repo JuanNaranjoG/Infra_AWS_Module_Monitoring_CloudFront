@@ -8,6 +8,12 @@ output "cloudfront_5xx_alarm_name" {
   value       = aws_cloudwatch_metric_alarm.cloudfront_5xx.alarm_name
 }
 
+output "cloudfront_4xx_alarm_name" {
+  description = "Nombre de la alarma de errores 5xx"
+  value       = aws_cloudwatch_metric_alarm.cloudfront_4xx.alarm_name
+}
+
+
 ## Alarma por latencia del origen en CloudFront
 output "cloudfront_origin_latency" {
   description = "Nombre de la alarma de latencia del origen de CloudFront"
@@ -15,8 +21,8 @@ output "cloudfront_origin_latency" {
 }
 
 
-## Alarma por errores en ejecución de funciones Lambda@Edge o Function
-output "cloudfront_function_execution_errors" {
-  description = "Nombre de la alarma de errores de ejecución de funciones de CloudFront"
-  value       = aws_cloudwatch_metric_alarm.cloudfront_function_errors
+## Alarma por cantidad de solictudes
+output "cloudfront_Request" {
+  description = "Nombre de la alarma de cantidad de solicitudes de CloudFront"
+  value       = aws_cloudwatch_metric_alarm.cloudfront_request
 }

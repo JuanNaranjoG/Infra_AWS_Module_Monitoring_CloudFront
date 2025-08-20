@@ -57,50 +57,71 @@ variable "sns_topic_arn" {
 # Variables por métrica
 ###############################
 
-## 5xxErrorRate
-variable "cf_5xx_threshold" {
+## 5xxError
+
+variable "cloudfront_5xx_error_evaluation_periods" {
   type    = number
-  default = 10
+  default = 3 # Periodos por cada evaluacion antes de generar la alarma 3 * 120 = 360
 }
 
-variable "cf_5xx_period" {
+variable "cloudfront_5xx_error_events_period" {
   type    = number
-  default = 300
+  default = 120 # Valor en segundos = 2 minutos
 }
 
-variable "cf_5xx_evaluation_periods" {
+variable "cloudfront_5xx_error_threshold" {
   type    = number
-  default = 1
+  default = 5 # Equivale al 5% de tasa de error durante los periodos validados
+
 }
 
-## OriginLatency
-variable "cf_origin_latency_threshold" {
+## 4xxError
+
+variable "cloudfront_4xx_error_evaluation_periods" {
   type    = number
-  default = 80
+  default = 3 # Periodos por cada evaluacion antes de generar la alarma 3 * 100 = 300
 }
 
-variable "cf_origin_latency_period" {
+variable "cloudfront_4xx_error_events_period" {
   type    = number
-  default = 300
+  default = 100 # Valor en segundos = 1,7 minutos
 }
 
-variable "cf_origin_latency_evaluation_periods" {
+variable "cloudfront_4xx_error_threshold" {
   type    = number
-  default = 1
+  default = 2 # Equivale al 2% de tasa de error durante los periodos validados
 }
 
-## FunctionExecutionErrors
-variable "cf_function_errors_threshold" {
+## Originlantency
+
+variable "cloudfront_origin_lantency_evaluation_periods" {
   type    = number
-  default = 0
+  default = 3 # Periodos por cada evaluacion antes de generar la alarma 3 * 100 = 30
 }
 
-variable "cf_function_errors_period" {
+variable "cloudfront_origin_lantency_events_period" {
   type    = number
-  default = 300
+  default = 100 # Valor en segundos = 1,7 minutos
 }
 
-variable "cf_function_errors_evaluation_periods" {
+variable "cloudfront_origin_lantency_threshold" {
   type    = number
-  default = 1
+  default = 1000 #  1000 segundos durante los periodos validados
+}
+
+## Request
+
+variable "cloudfront_request_evaluation_periods" {
+  type    = number
+  default = 3 # Periodos por cada evaluacion antes de generar la alarma 3 * 100 = 300
+}
+
+variable "cloudfront_request_events_period" {
+  type    = number
+  default = 100 # Valor en segundos = 1,7 minutos
+}
+
+variable "cloudfront_request_threshold" {
+  type    = number
+  default = 10000 # 10000 solicitudes durante los periodos validados
 }
