@@ -2,9 +2,9 @@
 # Variables generales
 ###############################
 
-variable "cloudfront_distributions" {
-  description = "Mapa con alias lógico => DistributionId"
-  type        = map(string)
+variable "cloudfront_distribution" {
+   description = "ID de la distribución de CloudFront a monitorear"
+   type        = string
 }
 
 variable "project" {
@@ -48,7 +48,7 @@ variable "resource_tags" {
 }
 
 variable "sns_topic-arn" {
-  type        = string
+  type        = map(string)
   default     = {}
   description = "SNS topic ARN para notificaciones"
 }
@@ -105,4 +105,3 @@ variable "cf_function_errors_evaluation_periods" {
   type    = number
   default = 1
 }
-
