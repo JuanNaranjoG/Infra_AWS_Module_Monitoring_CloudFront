@@ -92,7 +92,7 @@ resource "aws_cloudwatch_metric_alarm" "cloudfront_function_execution_errors" {
 
 ```hcl
 module "cloudfront_monitoring" {
-  source                   = "git::git@github.com:bocc-principal/Infra_AWS_Module_Monitoring_CloudFront.git//CloudFront?ref=V1.0.1"
+  source                  = "git::https://github.com/JuanNaranjoG/Infra_AWS_Module_Monitoring_CloudFront.git//cloudfront?ref=main"
   cloudfront_distributions = var.cloudfront_distributions
   project                  = var.project
   name_service             = var.bdo_name_service
