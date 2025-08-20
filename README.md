@@ -95,7 +95,7 @@ module "cloudfront_monitoring" {
   source                  = "git::https://github.com/JuanNaranjoG/Infra_AWS_Module_Monitoring_CloudFront.git//cloudfront?ref=main"
   cloudfront_distributions = var.cloudfront_distributions
   project                  = var.project
-  name_service             = var.bdo_name_service
+  bdo_name_service         = var.bdo_name_service
   bdo_environment          = var.bdo_environment
   purpose                  = var.purpose
 
