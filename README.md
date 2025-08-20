@@ -99,7 +99,7 @@ module "cloudfront_monitoring" {
   bdo_environment          = var.bdo_environment
   purpose                  = var.purpose
 
-  sns_topic_arn            = "sns_topic_arn"
+  sns_topic_arn            = var.sns_topic_arn
 }
 ```
 
