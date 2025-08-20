@@ -48,8 +48,7 @@ variable "resource_tags" {
 }
 
 variable "sns_topic_arn" {
-  type        = map(string)
-  default     = {}
+  type        = string
   description = "SNS topic ARN para notificaciones"
 }
 
