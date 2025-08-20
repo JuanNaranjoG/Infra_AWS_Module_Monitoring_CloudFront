@@ -47,7 +47,7 @@ variable "resource_tags" {
   description = "Etiquetas Bdo - Etiquetas Aval"
 }
 
-variable "sns_topic-arn" {
+variable "sns_topic_arn" {
   type        = map(string)
   default     = {}
   description = "SNS topic ARN para notificaciones"
