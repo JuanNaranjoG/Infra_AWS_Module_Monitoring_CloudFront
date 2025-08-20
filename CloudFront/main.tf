@@ -8,7 +8,7 @@ resource "aws_cloudwatch_metric_alarm" "cloudfront_5xx" {
   alarm_name          = "${var.project}-${var.bdo_name_service}-5xxError-${var.bdo_environment}"
   comparison_operator = "GreaterThanThreshold"
   evaluation_periods  = var.cloudfront_5xx_error_evaluation_periods
-  metric_name         = "5xxError"
+  metric_name         = "5xxErrorRate"
   namespace           = "AWS/CloudFront"
   period              = var.cloudfront_5xx_error_events_period
   statistic           = "Average"
@@ -35,7 +35,7 @@ resource "aws_cloudwatch_metric_alarm" "cloudfront_4xx" {
   alarm_name          = "${var.project}-${var.bdo_name_service}-4xxError-${var.bdo_environment}"
   comparison_operator = "GreaterThanThreshold"
   evaluation_periods  = var.cloudfront_4xx_error_evaluation_periods
-  metric_name         = "4xxError"
+  metric_name         = "4xxErrorRate"
   namespace           = "AWS/CloudFront"
   period              = var.cloudfront_4xx_error_events_period
   statistic           = "Average"
@@ -91,7 +91,7 @@ resource "aws_cloudwatch_metric_alarm" "cloudfront_request" {
   alarm_name          = "${var.project}-${var.bdo_name_service}-Request-${var.bdo_environment}"
   comparison_operator = "GreaterThanThreshold"
   evaluation_periods  = var.cloudfront_request_evaluation_periods
-  metric_name         = "Request"
+  metric_name         = "Requests"
   namespace           = "AWS/CloudFront"
   period              = var.cloudfront_request_events_period
   statistic           = "Maximum"
